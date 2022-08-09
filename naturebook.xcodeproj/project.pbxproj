@@ -16,6 +16,7 @@
 		21D10FA928A26D5F006DD9DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D10FA728A26D5F006DD9DF /* LaunchScreen.storyboard */; };
 		21D10FB428A26D5F006DD9DF /* naturebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D10FB328A26D5F006DD9DF /* naturebookTests.swift */; };
 		21D10FBF28A26D5F006DD9DF /* naturebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D10FBE28A26D5F006DD9DF /* naturebookUITests.swift */; };
+		21D10FCD28A26E14006DD9DF /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D10FCC28A26E14006DD9DF /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		21D10FBA28A26D5F006DD9DF /* naturebookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = naturebookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D10FBE28A26D5F006DD9DF /* naturebookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = naturebookUITests.swift; sourceTree = "<group>"; };
 		21D10FC028A26D5F006DD9DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21D10FCC28A26E14006DD9DF /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				21D10F9928A26D5E006DD9DF /* AppDelegate.swift */,
 				21D10F9B28A26D5E006DD9DF /* SceneDelegate.swift */,
 				21D10F9D28A26D5E006DD9DF /* ViewController.swift */,
+				21D10FCC28A26E14006DD9DF /* ViewController2.swift */,
 				21D10F9F28A26D5E006DD9DF /* Main.storyboard */,
 				21D10FA528A26D5F006DD9DF /* Assets.xcassets */,
 				21D10FA728A26D5F006DD9DF /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D10FCD28A26E14006DD9DF /* ViewController2.swift in Sources */,
 				21D10F9E28A26D5E006DD9DF /* ViewController.swift in Sources */,
 				21D10FA428A26D5E006DD9DF /* naturebook.xcdatamodeld in Sources */,
 				21D10F9A28A26D5E006DD9DF /* AppDelegate.swift in Sources */,
