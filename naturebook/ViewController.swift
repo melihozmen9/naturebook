@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         let cell = UITableViewCell()
         cell.textLabel?.text = "HiCoreData"
         return cell
+        
     }
     
     @IBOutlet weak var tableview: UITableView!

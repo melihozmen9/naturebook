@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class ViewController2: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     @IBOutlet weak var nametext: UITextField!
     @IBOutlet weak var placetext: UITextField!
     @IBOutlet weak var yeartext: UITextField!
@@ -15,9 +15,26 @@ class ViewController2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageview.isUserInteractionEnabled = true
+        let gesturerecognizer = UITapGestureRecognizer(target: self, action: #selector(imagetap))
+        imageview.addGestureRecognizer(gesturerecognizer)
         // Do any additional setup after loading the view.
     }
+    
+    @objc func imagetap() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageview.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     
     @IBAction func saveclickedbutton(_ sender: Any) {
     }
