@@ -23,10 +23,14 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addItem))
         tableview.delegate = self
         tableview.dataSource = self
+        
     }
-
+    @objc func addItem () {
+        performSegue(withIdentifier: "tosecondvc", sender: nil)
+    }
 
 }
 

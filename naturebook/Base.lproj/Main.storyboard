@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qfX-Td-Umo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NGi-5U-uaa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="Ncl-8Q-T8M"/>
                     <connections>
                         <outlet property="tableview" destination="oGX-RO-mUW" id="hFQ-Dl-5zq"/>
-                        <segue destination="qfX-Td-Umo" kind="show" identifier="&quot;tosecondvc&quot;" id="FVi-bv-6kh"/>
+                        <segue destination="qfX-Td-Umo" kind="show" identifier="tosecondvc" id="FVi-bv-6kh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

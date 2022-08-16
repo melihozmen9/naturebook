@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController2: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     @IBOutlet weak var nametext: UITextField!
@@ -41,10 +42,27 @@ class ViewController2: UIViewController,UIImagePickerControllerDelegate,UINaviga
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let savedata =
+        let savedata = NSEntityDescription.insertNewObject(forEntityName: "Galeri", into: context)
+        
+        savedata.setValue((nametext.text!), forKey: "name")
+        savedata.setValue((placetext.text!),forKey : "place")
+        
+        if let year = Int(yeartext.text!) {
+            savedata.setValue(year, forKey: "year")
+        }
+        let imagepress = imageview.image?.jpegData(compressionQuality: 0.5)
+        savedata.setValue(imagepress, forKey: "image")
+        savedata.setValue(UUID(), forKey: "id") // buradaki UUID bize unique bir id oluşturacak.
+        do {
+            try context.save()
+            print("success ")
+        } catch  {
+            print("error")
+        }
         
     }
     
+  
     /*
     // MARK: - Navigation
 
