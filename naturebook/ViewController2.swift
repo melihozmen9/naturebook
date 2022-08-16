@@ -37,6 +37,12 @@ class ViewController2: UIViewController,UIImagePickerControllerDelegate,UINaviga
     
     
     @IBAction func saveclickedbutton(_ sender: Any) {
+        // veri kaydetme işlemi
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let savedata =
+        
     }
     
     /*
