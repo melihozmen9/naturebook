@@ -30,9 +30,14 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addItem))
         tableview.delegate = self
         tableview.dataSource = self
-        
+        getdata()
     }
-    func getdata() {
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(getdata), name: NSNotification.Name("newdata"), object: nil)
+    }
+    @objc func getdata() {
+        self.namearray.removeAll(keepingCapacity: true)
+        self.idarray.removeAll(keepingCapacity: true)
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let context = appdelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Galeri")
