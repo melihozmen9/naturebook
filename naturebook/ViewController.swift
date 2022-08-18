@@ -11,6 +11,8 @@ import CoreData
 class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     var namearray = [String]()
     var idarray = [UUID]()
+    var sourcename = ""
+    var sourceid : UUID?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return namearray.count
@@ -61,6 +63,18 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     @objc func addItem () {
         performSegue(withIdentifier: "tosecondvc", sender: nil)
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tosecondvc" {
+            let destinationvc = segue.destination as! ViewController2
+            destinationvc.targetname = sourcename
+            destinationvc.targetid = sourceid
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        sourcename = namearray[indexPath.row]
+        sourceid = idarray[indexPath.row]
+        
+        performSegue(withIdentifier: "tosecondvc", sender: nil)
+    }
 }
 
