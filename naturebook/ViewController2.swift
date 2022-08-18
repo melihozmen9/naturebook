@@ -104,5 +104,5 @@ class ViewController2: UIViewController,UIImagePickerControllerDelegate,UINaviga
         self.navigationController?.popViewController(animated: true)
         
     }
-    commi
+    
 }

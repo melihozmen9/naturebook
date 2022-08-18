@@ -76,5 +76,32 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         performSegue(withIdentifier: "tosecondvc", sender: nil)
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appdelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Galeri")
+        
+        let idstring = idarray[indexPath.row].uuidString
+        fetchRequest.predicate = NSPredicate(format: "id = %@", idstring)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject]{
+                if let id = result.value(forKey: "id") as? UUID {
+                    context.delete(result)
+                    namearray.remove(at: indexPath.row)
+                    idarray.remove(at: indexPath.row)
+                    self.tableview.reloadData()
+                    do {
+                        try context.save()
+                    } catch  {
+                        
+                    }
+                }
+            }
+        } catch  {
+            
+        }
+    }
 }
 
